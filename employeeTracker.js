@@ -25,8 +25,8 @@ const runTracker = () => {
         message: "What would you like to do with your employee database?",
         choices: [
             'View All Employees',
-            'View All Employees By Department',
-            'View All Employees By Manager',
+            'View All Employee Departments',
+            'View All Employee Roles',
             'Add An Employee',
             'Remove An Employee',
             'Update Employee Role',
@@ -42,12 +42,12 @@ const runTracker = () => {
                     viewEmployees();
                     break;
 
-                case 'View All Employees By Department':
+                case 'View All Employee Departments':
                     viewByDepartment();
                     break;
 
-                case 'View All Employees By Manager':
-                    viewByManager();
+                case 'View All Employee Roles':
+                    viewByRole();
                     break;
 
                 case 'Add An Employee':
@@ -76,24 +76,94 @@ const runTracker = () => {
             }
         });
 };
-// Creating viewEmployees function to first pull all employees located within the database
+// Creating viewEmployees function to first pull all employees located within the database and JOIN the employee and role databases
 function viewEmployees() {
-    var query = "SELECT * FROM employee";
+    var query = "SELECT * FROM employee JOIN role ON employee_trackerdb.employee.id = employee_trackerdb.role.id";
     connection.query(query, function (err, res) {
         if (err) throw err;
-        console.log(res.length + " employees found");
+        console.log(res.length + "employees found");
         console.table("All employees:", res);
         runTracker();
     });
 }
-// Creating viewByDepartment function to p
+// Creating viewByDepartment function to view employees ID relative to the department they work in
 function viewByDepartment() {
-    var query = "SELECT * FROM department";
-    if (err) throw err;
-    console.log(res.length + " employees found");
-    console.table("All departments:", res);
-    runTracker();
+    let query = "SELECT * FROM department";
+    connection.query(query, function (err, res) {
+        if (err) throw err;
+        console.log(res.length + "departments found");
+        console.table("All departments:", res);
+        runTracker();
+    });
 }
+// Creating viewByRole function to view all employee roles.
+function viewByRole() {
+    let query = "SELECT * FROM employee_trackerdb.role";
+    connection.query(query, function (err, res) {
+        if (err) throw err;
+        console.log(res.length + "roles found");
+        console.table("All Roles:", res);
+        runTracker();
+    });
+}
+// Creating addEmployee function to generate questions to add a new employee
+function addEmployee() {
+    inquirer
+        .prompt({
+            name: 'first_name',
+            type: 'input',
+            message: 'Please enter employee first name',
+        },
+            {
+                name: 'last_name',
+                type: 'input',
+                message: 'Please enter employee last name',
+            },
+            {
+                name: 'role_id',
+                type: 'input',
+                message: 'Please enter employee role id',
+            },
+            {
+                name: 'role_id',
+                type: 'input',
+                message: 'Please enter employee role id',
+            },
+            {
+                name: 'manager_id',
+                type: 'list',
+                message: 'Please select employee manager',
+                choices: [
+                    'Monty Burns',
+                    'John Frink'
+                ],
+            },
+        )
+        .then(function (answer) {
+
+            connection.query(
+                "INSERT INTO employee SET ?",
+                {
+                    first_name: answer.first_name,
+
+                    last_name: answer.last_name,
+
+                    role_id: answer.role_id,
+
+                    manager_id: answer.manager_id,
+                }),
+                runTracker();
+        }
+        )
+
+};
+// Creating final function called and last option to "Exit the tracker application"
+function exitTracker() {
+    connection.end();
+}
+
+
+
 
 
 
