@@ -11,6 +11,7 @@
    6. [Testing Instructions](#Testing-Instructions )
    7. [Future Development](#Future_Developement)
    8. [Contact Info](#Questions)
+   9. [Screenshot(s)](#Screenshot(s))
    
   ## Description :open_book:	
   This employee tracker is a Content Management System for managing a company's employees utilizing node, inquirer, and mySQL.
@@ -38,7 +39,7 @@
   ## License Information
   The MIT License is a permissive free software license originating at the Massachusetts Institute of Technology in the late 1980s. As a permissive license, it puts only very limited restriction on reuse and has, therefore, high license compatibility.
 
-  ## Project Contributors :mechanic:	 
+  ## Project Contributors :mechanic:
   Adam Spiegel
 
   ## Testing Instructions :hammer_and_wrench:	 
@@ -60,4 +61,8 @@
 
   [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:adamspiegel23@gmail.com)  [![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AdamSpiegel)  
 
+  ## Application Screenshot(s)
+![Screenshot1](Screenshot1.png)
+
+![Screenshot2](Screenshot2.png)
   

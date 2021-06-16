@@ -109,7 +109,7 @@ function viewByRole() {
 // Creating addEmployee function to generate questions to add a new employee
 function addEmployee() {
     inquirer
-        .prompt({
+        .prompt([{
             name: 'first_name',
             type: 'input',
             message: 'Please enter employee first name',
@@ -134,11 +134,11 @@ function addEmployee() {
                 type: 'list',
                 message: 'Please select employee manager',
                 choices: [
-                    'Monty Burns',
-                    'John Frink'
+                    {name: 'Monty Burns', value: 1},
+                    {name: 'John Frink', value: 3},
                 ],
             },
-        )
+        ])
         .then(function (answer) {
 
             connection.query(
