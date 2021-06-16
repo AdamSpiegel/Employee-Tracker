@@ -155,18 +155,8 @@ function addEmployee() {
                 runTracker();
         }
         )
-
 };
 // Creating final function called and last option to "Exit the tracker application"
 function exitTracker() {
     connection.end();
 }
-
-
-
-
-
-
-
-
-
