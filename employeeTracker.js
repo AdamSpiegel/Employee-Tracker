@@ -166,6 +166,7 @@ function removeEmployee() {
                 });
 
             runTracker();
+
         })
 };
 
@@ -200,6 +201,7 @@ function updateRole() {
                     first_name: answer.first_name,
                     last_name: answer.last_name,
                 });
+
             runTracker();
         });
 };
@@ -241,6 +243,7 @@ function updateManager() {
                 }
 
             );
+
             runTracker();
         });
 
