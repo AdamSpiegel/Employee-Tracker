@@ -10,9 +10,8 @@
 4.  [License Information](#License-Information)
 5.  [Contributors](#Project-Contributors)
 6.  [Testing Instructions](#Testing-Instructions)
-7.  [Future Development](#Future_Developement)
-8.  [Contact Info](#Questions)
-9.  [Screenshot(s)](<#Screenshot(s)>)
+7.  [Contact Info](#Questions)
+8.  [Screenshot(s)](<#Screenshot(s)>)
 
 ## Description :open_book:
 
@@ -38,7 +37,7 @@ Please follow these steps:
 
 ## Project Usage:computer:
 
-A backend employee management system which allows for a user to view thier entire staff, roles, salaries, and make edits accordingly to surpervise staff.
+A backend employee management system which allows for a user to view their entire staff, roles, salaries, and make edits accordingly to surpervise staff.
 
 ## License Information
 
@@ -57,14 +56,6 @@ Follow these steps:
 3. Begin with node employeeTracker.js
 4. Follow on screen prompts which interact with backend database.
 5. View results in command line for managing your employees.
-
-## Future Development :man_technologist:
-
-#### Items Still in Development and Troubleshooting:
-
-1. Deleting departments/roles/employees
-2. Viewing the total utilized budget of all employees
-3. Updating/Viewing employees by manager.
 
 ## Questions? :thinking:
 
