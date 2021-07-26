@@ -241,7 +241,6 @@ function updateManager() {
                     first_name: answer.first_name,
                     last_name: answer.last_name,
                 }
-
             );
 
             runTracker();
